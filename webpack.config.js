@@ -26,6 +26,9 @@ module.exports = {
       filename: "client.min.js",
       publicPath: '/'
     },
+    devServer: {
+      contentBase: path.join(__dirname, 'src')
+    },
     plugins: debug ? [] : [
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
